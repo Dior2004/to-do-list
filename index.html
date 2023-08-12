@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div id="all" class="todo_list_container">
+      <div class="todolist_tools">
+        <form class="list_form">
+          <div class="search">
+            <input
+              id="inp"
+              type="text"
+              placeholder="Add your task..."
+              autofocus
+              required
+              minlength="2"
+            />
+            <i id="delete" class="fa-solid fa-xmark"></i>
+          </div>
+          <button id="submit" type="submit" class="add_to">
+            <i class="fa-solid fa-plus"></i> Add Task
+          </button>
+        </form>
+        <div class="del">
+          <button class="delete">Delete All</button>
+          <div class="circle">
+            <i style="position: absolute" id="moon" class="fas fa-moon"></i>
+            <i style="position: absolute" id="sun" class="fas fa-sun"></i>
+          </div>
+        </div>
+      </div>
+
+      <form class="search_filter">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search Task" />
+      </form>
+
+      <div id="task_ul"></div>
+    </div>
+
+    <div class="delete_warning">
+      <i class="fa-solid fa-circle-question"></i>
+      <p>Are you shure? I think you know what you are doing.</p>
+      <div class="btns">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

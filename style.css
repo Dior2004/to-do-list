@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --shadow-color: #cbcbcba5;
+  --input-color: #0dc00df5;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+input {
+  background-color: transparent;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.todo_list_container {
+  width: 500px;
+  height: 80vh;
+  border-radius: 15px;
+  box-shadow: 0px 2px 15px var(--shadow-color);
+}
+
+.todolist_tools {
+  width: 93.5%;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0px 2px 12px var(--shadow-color);
+}
+
+.list_form {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.search {
+  width: 65%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 1px 8px var(--shadow-color);
+}
+
+input {
+  flex: 1;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--input-color);
+}
+
+.search input::placeholder {
+  color: var(--input-color);
+}
+
+.search i {
+  margin: 0 10px;
+  color: #f84646;
+  font-size: 20px;
+}
+
+.add_to {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #14b314f5;
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  transition: 0.3s;
+  box-shadow: 0px 2px 15px var(--shadow-color);
+}
+
+.add_to:hover {
+  transform: scale(0.98);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.del {
+  width: 93.5%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.del .circle {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: #393939;
+  color: #fbc000;
+  cursor: pointer;
+  position: relative;
+}
+
+#sun {
+  opacity: 0;
+}
+
+.turn_back {
+  transform: rotate(-360deg);
+  transition: 0.5s;
+}
+
+.del button {
+  width: 110px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #393939;
+  box-shadow: 0px 1px 10px var(--shadow-color);
+  color: #fff;
+  border: none;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.del button:hover {
+  transform: scale(0.98);
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.search_filter {
+  width: 93.5%;
+  min-height: 40px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  margin: 5px auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.search_filter input {
+  padding-right: 10px;
+}
+
+.search_filter i {
+  color: var(--input-color);
+  margin: 5px 0 5px 15px;
+}
+
+#task_ul {
+  width: 93.5%;
+  height: 52%;
+  margin: 10px auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  list-style: none;
+}
+
+#task_ul::-webkit-scrollbar {
+  display: none;
+}
+
+.task_li {
+  width: 97%;
+  min-height: 35px;
+  border-radius: 6px;
+  text-indent: 10px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1.5px 6px var(--shadow-color);
+  color: var(--input-color);
+  animation: spring 0.5s linear;
+}
+
+.written_task {
+  flex: 1;
+  overflow: hidden;
+}
+
+.written_task.outer {
+  color: #ff1414;
+}
+
+.wrap {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.time_span {
+  font-size: 15px;
+}
+
+.eleminating {
+  text-decoration: line-through #ff1414;
+  color: #757575;
+  transition: 0.3s;
+}
+
+li .fa-circle-xmark {
+  color: #ff1414;
+}
+
+li .fa-circle-check {
+  cursor: pointer;
+  font-size: 15px;
+  margin: 0 3px;
+}
+
+.after {
+  color: #757575;
+}
+
+.delete_warning {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #fbf300;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.delete_warning i {
+  font-size: 50px;
+  cursor: auto;
+}
+
+.delete_warning p {
+  width: 85%;
+  text-align: center;
+  margin: 15px 0;
+  -webkit-text-stroke: 0.3px #000;
+}
+
+.btns > button {
+  width: 50px;
+  height: 25px;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: 0.5s;
+}
+
+.btns > button:hover {
+  transform: scale(0.98);
+  transition: 0.5s;
+}
+
+#yes {
+  background-color: #ff1414;
+}
+
+#no {
+  background-color: #000;
+}
+
+@keyframes spring {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
